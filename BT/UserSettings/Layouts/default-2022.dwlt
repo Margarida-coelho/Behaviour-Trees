@@ -430,7 +430,7 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets
+    - Assets/BehaviourTree
     m_Globs: []
     m_OriginalText: 
     m_ImportLogFlags: 0
@@ -438,15 +438,15 @@ MonoBehaviour:
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets
+  - Assets/BehaviourTree
   m_LastFoldersGridSize: -1
   m_LastProjectPath: C:\DesigndeJogosDigitais\DJD\3ano\AI\Behaviour-Trees\BT
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 8a5d0000
-    m_LastClickedID: 23946
+    m_SelectedIDs: ac5d0000
+    m_LastClickedID: 23980
     m_ExpandedIDs: 000000008a5d000000ca9a3bffffff7f
     m_RenameOverlay:
       m_UserAcceptedRename: 0
@@ -615,8 +615,8 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: 
-      m_LastClickedID: 0
+      m_SelectedIDs: fc5b0000
+      m_LastClickedID: 23548
       m_ExpandedIDs: 2cfbffff
       m_RenameOverlay:
         m_UserAcceptedRename: 0
@@ -1101,9 +1101,9 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: -0.1068209, y: 0.8931143, z: -0.3032318, w: -0.31462127}
   m_Size:
-    m_Target: 21.906443
+    m_Target: 38.822514
     speed: 2
-    m_Value: 21.906443
+    m_Value: 38.822514
   m_Ortho:
     m_Target: 0
     speed: 2
