@@ -360,6 +360,7 @@
 "Assets/BehaviourTree/Leaf.cs"
 "Assets/BehaviourTree/Node.cs"
 "Assets/BehaviourTree/RobberBehaviour.cs"
+"Assets/BehaviourTree/Sequence.cs"
 "Assets/Models/Rotate.cs"
 -langversion:9.0
 

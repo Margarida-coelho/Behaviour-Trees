@@ -11,6 +11,8 @@ public class RobberBehaviour : MonoBehaviour
 
     [SerializeField] GameObject van;
 
+    [SerializeField] GameObject backDoor;
+
     NavMeshAgent agent;
 
     public enum ActionState
@@ -21,6 +23,8 @@ public class RobberBehaviour : MonoBehaviour
 
     ActionState state = ActionState.IDLE;
 
+    Node.Status treeStatus = Node.Status.RUNNING;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -28,23 +32,30 @@ public class RobberBehaviour : MonoBehaviour
 
         tree = new BehaviourTree();
 
-        Node steal = new Node("Steal Something");
+        Sequence steal = new Sequence("Steal Something");
+        Leaf goToBackDoor = new Leaf("Go To Back Door", GoToBackDoor);
         Leaf goToDiamond = new Leaf("Go To Diamond", GoToDiamond);
         Leaf goToVan = new Leaf("Go To Van", GoToVan);
 
+        steal.AddChild(goToBackDoor);
         steal.AddChild(goToDiamond);
+        steal.AddChild(goToBackDoor);
         steal.AddChild(goToVan);
         tree.AddChild(steal);
 
         tree.PrintTree();
-
-        tree.Process();
     }
 
     // Update is called once per frame
     void Update()
     {
+        if (treeStatus == Node.Status.RUNNING)
+            treeStatus = tree.Process();
+    }
 
+    public Node.Status GoToBackDoor()
+    {
+        return GoToLocation(backDoor.transform.position);
     }
 
     public Node.Status GoToDiamond()
@@ -53,7 +64,7 @@ public class RobberBehaviour : MonoBehaviour
     }
     public Node.Status GoToVan()
     {
-        return GoToLocation(diamond.transform.position);
+        return GoToLocation(van.transform.position);
     }
 
     Node.Status GoToLocation(Vector3 destination)
